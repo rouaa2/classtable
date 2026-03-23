@@ -36,10 +36,10 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
 @keyframes fadeUp{from{transform:translateY(20px);opacity:0}to{transform:none;opacity:1}}
 .login-logo{text-align:center;margin-bottom:28px;}
 .login-logo .crest{
-  width:64px;height:64px;background:linear-gradient(135deg,#0f172a,#1d4ed8);
+  width:64px;height:64px;background:transparent;
   border-radius:14px;display:inline-flex;align-items:center;justify-content:center;
   font-size:32px;font-weight:900;color:#fff;margin-bottom:12px;
-  box-shadow:0 4px 20px rgba(29,78,216,.35);
+  box-shadow:0 4px 20px rgba(29,78,216,.2);overflow:hidden;
 }
 .login-logo h1{font-size:18px;font-weight:900;line-height:1.3;color:#0f172a;}
 .login-logo p{font-size:11px;color:var(--muted);font-family:var(--mono);letter-spacing:2px;margin-top:4px;}
@@ -117,9 +117,9 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:1
 }
 .h-left{display:flex;align-items:center;gap:12px;}
 .h-crest{
-  width:38px;height:38px;background:rgba(255,255,255,.15);
+  width:38px;height:38px;background:transparent;
   border-radius:8px;display:flex;align-items:center;justify-content:center;
-  font-size:20px;font-weight:900;border:1px solid rgba(255,255,255,.2);flex-shrink:0;
+  font-size:20px;font-weight:900;border:none;flex-shrink:0;overflow:hidden;
 }
 .h-title{font-size:15px;font-weight:700;letter-spacing:.5px;line-height:1.2;}
 .h-sub{font-size:10px;color:rgba(255,255,255,.5);font-family:var(--mono);letter-spacing:2px;margin-top:2px;}
@@ -272,7 +272,7 @@ td.pc{background:#f8fafc;font-family:var(--mono);font-size:10px;color:var(--mute
 <div id="loginScreen">
 <div class="login-card">
   <div class="login-logo">
-    <div class="crest">瑞</div>
+    <div class="crest"><img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAAoACgDASIAAhEBAxEB/8QAGQABAQEBAQEAAAAAAAAAAAAAAAUGBAcI/8QAMxAAAQMDAgMGAQ0AAAAAAAAAAQIDBAAFERIhBjFBEyIyUYGRYRYkNUJicXJ0obHBwvD/xAAaAQABBQEAAAAAAAAAAAAAAAACAAEDBAYF/8QAIhEAAQQBAwUBAAAAAAAAAAAAAQACAxEEITFBBRJhgZGx/9oADAMBAAIRAxEAPwD40Qha86EKVgZOBnArQcHWBN1W6/J1CM2CnbmpRH8c/aqHB1klNhi8RZ0fCkqCkKSrGORBq06WnHSsLty3k81xlrQsH8SQR70JPC0vTukABk+QNN6OxHBsX8pee3SE9bp7sR8d9s4z0UOhH31y1seJWFXJgHxymU9xeBqWnqk42PXBHxBAJGY44buSbkiE6hDZLYdW5qylCOpJpwVzMnp72zEQtJbenvYHyo1KqX20m3LCm3C6ydtSk6Tn4jp/s4pTqjLE6JxY8ahbODZLbbbe2iVKeltLVqQ0SdC1EDwoHi6c81N42uM+EzGiR/mLTqSrs2tiADgAkfsP1rLMXOczKjyUyFlyOAlvUchKR0x5Vq3OIbBeIaG7xGcbcRv3QSAfskb+hoKIWojz8fJx3wxERHSr5HNu39fvEjg12RIvzTbi1uNkFTmo5AAwcn2rQxz2dqiBpSsOthxSiclRyrBJPkEjA5DnUG5Xm3x4jkGwRSwh0YdfX41DyHkKuR/oe2/lkf3pFDgFjGuia7uIBJI21I0HzfyoN5eU8l1k7BOQeuCM7D2PsSduaua8rCXZAyMl07Z3+vvSiCz2S7ukJKj0pSnVZKu/KNxMGPGbipCmWg2FFWc4zvj1pSlSmhyJIb7DVqNIdcfeU66rUpRJPrSlKSiJvUr/2Q==" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></div>
     <h1>高雄市立瑞祥高級中學</h1>
     <p>COURSE SCHEDULE SYSTEM</p>
   </div>
@@ -321,7 +321,7 @@ td.pc{background:#f8fafc;font-family:var(--mono);font-size:10px;color:var(--mute
 <header class="header">
   <div class="header-inner">
     <div class="h-left">
-      <div class="h-crest">瑞</div>
+      <div class="h-crest"><img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAAoACgDASIAAhEBAxEB/8QAGQABAQEBAQEAAAAAAAAAAAAAAAUGBAcI/8QAMxAAAQMDAgMGAQ0AAAAAAAAAAQIDBAAFERIhBjFBEyIyUYGRYRYkNUJicXJ0obHBwvD/xAAaAQABBQEAAAAAAAAAAAAAAAACAAEDBAYF/8QAIhEAAQQBAwUBAAAAAAAAAAAAAQACAxEEITFBBRJhgZGx/9oADAMBAAIRAxEAPwD40Qha86EKVgZOBnArQcHWBN1W6/J1CM2CnbmpRH8c/aqHB1klNhi8RZ0fCkqCkKSrGORBq06WnHSsLty3k81xlrQsH8SQR70JPC0vTukABk+QNN6OxHBsX8pee3SE9bp7sR8d9s4z0UOhH31y1seJWFXJgHxymU9xeBqWnqk42PXBHxBAJGY44buSbkiE6hDZLYdW5qylCOpJpwVzMnp72zEQtJbenvYHyo1KqX20m3LCm3C6ydtSk6Tn4jp/s4pTqjLE6JxY8ahbODZLbbbe2iVKeltLVqQ0SdC1EDwoHi6c81N42uM+EzGiR/mLTqSrs2tiADgAkfsP1rLMXOczKjyUyFlyOAlvUchKR0x5Vq3OIbBeIaG7xGcbcRv3QSAfskb+hoKIWojz8fJx3wxERHSr5HNu39fvEjg12RIvzTbi1uNkFTmo5AAwcn2rQxz2dqiBpSsOthxSiclRyrBJPkEjA5DnUG5Xm3x4jkGwRSwh0YdfX41DyHkKuR/oe2/lkf3pFDgFjGuia7uIBJI21I0HzfyoN5eU8l1k7BOQeuCM7D2PsSduaua8rCXZAyMl07Z3+vvSiCz2S7ukJKj0pSnVZKu/KNxMGPGbipCmWg2FFWc4zvj1pSlSmhyJIb7DVqNIdcfeU66rUpRJPrSlKSiJvUr/2Q==" style="width:100%;height:100%;object-fit:cover;border-radius:7px;"></div>
       <div>
         <div class="h-title">高雄市立瑞祥高級中學 · 課表查詢系統</div>
         <div class="h-sub">114學年度 第2學期 · 115.01.21 – 115.06.30</div>
